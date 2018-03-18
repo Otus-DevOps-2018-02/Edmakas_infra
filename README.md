@@ -24,6 +24,6 @@ Host bastion
     IdentityFile ~/.ssh/appuser
 ````
 #### Data for verification of OpenVpn configuration
-bastion_ip = 35.205.144.68
+bastion_IP = 35.205.144.68
 
 someinternalhost_IP = 10.132.0.3
