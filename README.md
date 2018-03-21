@@ -1,2 +1,3 @@
 # Edmakas_infra
-Edmakas Infra repository
+Cheking if slack is informed
+
