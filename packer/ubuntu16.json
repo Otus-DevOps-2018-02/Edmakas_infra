@@ -1,14 +1,14 @@
 {
   "variables":{
-    "project_id": "tranquil-rex-198321",
-    "source_image_family": "ubuntu-1604-lts",
-    "machine_type": "f1-micro"
+    "project_id": null,
+    "source_image_family": null,
+    "machine_type": null
   },
   "builders": [
     {
     "type": "googlecompute",
     "project_id": "{{user `project_id`}}",
-    "image_name": "reddit-base-ecka-{{timestamp}}",
+    "image_name": "reddit-base-{{timestamp}}",
     "image_family": "reddit-base",
     "source_image_family": "{{user `source_image_family`}}",
     "zone": "europe-west1-b",
