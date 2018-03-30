@@ -1,6 +1,5 @@
 # Edmakas_infra
 ## 4. SSH bastion
-#### slide on page 35
 ###### Option 1:
 Host "bastion" works as a gateway for whole hosts with no external IP address
 Example of a command to connect to internal host through "bastion":
