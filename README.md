@@ -29,12 +29,12 @@ bastion_IP = 35.205.144.68
 someinternalhost_IP = 10.132.0.3
 
 ## HW №5
-# Работа с gcloud
-## Создание инстанса со startup-script
+### Работа с gcloud
+#### Создание инстанса со startup-script
 ```
 gcloud compute instances create reddit-app --boot-disk-size=10GB --image-family ubuntu-1604-lts --image-project=ubuntu-os-cloud --machine-type=g1-small --tags puma-server --restart-on-failure --metadata-from-file  startup-script='./startup_script.sh'
 ```
-## Создание правила Firewall`а
+#### Создание правила Firewall`а
 ```
 gcloud compute firewall-rules create default-puma-server --allow tcp:9292 --description "Allow incoming traffic on TCP port 9292" --direction INGRESS --target-tags puma-server
 ```
