@@ -1,2 +1,21 @@
-#! /bin/bash
-wget -O - https://gist.githubusercontent.com/Edmakas/2c62e491c112c7ef732385391663c3a4/raw/2466942207bf0c7ab32886987bcd5cc7bd7f4b63/gistfile1.txt | bash
+#!/bin/bash
+# Install ruby package
+sudo apt update
+sudo apt install -y ruby-full ruby-bundler build-essential
+
+# Add mongodb repo 
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
+sudo bash -c 'echo "deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" > /etc/apt/sources.list.d/mongodb-org-3.2.list'
+
+# Install mongodb 
+sudo apt update
+sudo apt install -y mongodb-org
+
+# Start mongod
+sudo systemctl start mongod
+sudo systemctl enable mongod
+
+# Install app
+git clone -b monolith https://github.com/express42/reddit.git
+cd reddit && bundle install
+puma -d
