@@ -15,10 +15,10 @@
     "zone": "europe-west1-b",
     "ssh_username": "appuser",
     "machine_type": "{{user `machine_type`}}",
-    "disk_size": "10",
+    "disk_size": "20",
     "disk_type": "pd-standard",
     "network": "default",
-    "tags": ["puma-server","edamakas-tag"]
+    "tags": "puma-server"
     }
   ],
   "provisioners": [
