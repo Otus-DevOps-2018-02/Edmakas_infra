@@ -36,7 +36,8 @@ gcloud compute instances create reddit-app --boot-disk-size=10GB --image-family 
 ```
 gcloud compute firewall-rules create default-puma-server --allow tcp:9292 --description "Allow incoming traffic on TCP port 9292" --direction INGRESS --target-tags puma-server
 ```
-testapp_IP = 35.187.78.119
+testapp_IP = 35.189.225.133
+
 testapp_port = 9292
 
 ## 6. Packer
