@@ -48,3 +48,6 @@ testapp_port = 9292
 - created folder packer and subfolder scripts
 - created packer template ubunut16.json, some variables have to be set in variables.json.example
 - added optional parameters for GCP images as image_description, disk_size, network. tags
+
+## 6. Terraform-1
+
