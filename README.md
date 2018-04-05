@@ -49,5 +49,14 @@ testapp_port = 9292
 - created packer template ubunut16.json, some variables have to be set in variables.json.example
 - added optional parameters for GCP images as image_description, disk_size, network. tags
 
-## 6. Terraform-1
-
+## 7. Terraform-1
+### Using of terraform for managing IaC 
+#### 7.1 What was done
+ - создан каталог terraform
+ - в terraform созданы конфигурации *.tf для автоматизированного развертывания VM в GCP
+#### 7.2 How to run the project
+ - создать файл terraform.tfvars и задать в нем значения переменных tf (пример в terraform.tfvars.example);
+ - выполнить terraform apply
+ ### 7.3 How to check
+  - Выполнтиь terraform output app_external_ip
+  - в веб-браузерe перейти по адресу указанному в выводе команды. В окне веб браузера отобразится установленное приложение.
