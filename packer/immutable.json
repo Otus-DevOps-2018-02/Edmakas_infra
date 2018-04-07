@@ -17,8 +17,7 @@
     "machine_type": "{{user `machine_type`}}",
     "disk_size": "10",
     "disk_type": "pd-standard",
-    "network": "default",
-    "tags": ["puma-server","edamakas-tag"]
+    "network": "default"
     }
   ],
   "provisioners": [
@@ -34,9 +33,8 @@
     },
     {
       "type": "shell",
-      "script": "files/install_test_app.sh",
+      "script": "scripts/install_test_app.sh",
       "execute_command": "sudo {{.Path}}"
     }
   ]
 }
-
