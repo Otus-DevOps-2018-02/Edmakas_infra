@@ -12,7 +12,7 @@ resource "google_compute_project_metadata_item" "default" {
 resource "google_compute_instance" "app" {
   name         = "reddit-app"
   machine_type = "n1-standard-1"
-  zone         = "${var.region}"
+  zone         = "${var.zone}"
 
   boot_disk {
     initialize_params {
@@ -52,6 +52,19 @@ resource "google_compute_firewall" "firewall_puma" {
   allow {
     protocol = "tcp"
     ports    = ["9292"]
+  }
+
+  source_ranges = ["0.0.0.0/0"]
+  target_tags   = ["reddit-app"]
+}
+
+resource "google_compute_firewall" "firewall_ssh" {
+  name    = "allow-puma-default"
+  network = "default"
+
+  allow {
+    protocol = "tcp"
+    ports    = ["22"]
   }
 
   source_ranges = ["0.0.0.0/0"]
