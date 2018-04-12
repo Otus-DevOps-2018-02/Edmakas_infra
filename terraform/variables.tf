@@ -23,6 +23,7 @@ variable private_key_path_conn {
 variable disk_image {
   description = "Disk image"
 }
+
 variable app_disk_image {
   description = "Disk image for reddit app"
   default     = "reddit-app-base"
