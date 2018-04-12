@@ -2,7 +2,7 @@ resource "google_compute_instance" "db" {
   name         = "reddit-db"
   machine_type = "n1-standard-1"
   zone         = "${var.zone}"
-  tags = ["reddit-db"]
+  tags         = ["reddit-db"]
 
   boot_disk {
     initialize_params {
@@ -20,7 +20,7 @@ resource "google_compute_instance" "db" {
   }
 }
 resource "google_compute_firewall" "firewall_mongo" {
-  name = "allow-mongo-default"
+  name    = "allow-mongo-default"
   network = "default"
 
   allow {
