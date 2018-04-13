@@ -20,10 +20,6 @@ variable private_key_path_conn {
   description = "Path to the private key used by provisioner connection"
 }
 
-variable disk_image {
-  description = "Disk image"
-}
-
 variable app_disk_image {
   description = "Disk image for reddit app"
   default     = "reddit-app-base"
