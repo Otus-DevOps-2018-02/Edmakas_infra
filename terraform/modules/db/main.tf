@@ -19,6 +19,7 @@ resource "google_compute_instance" "db" {
     ssh-keys = "appuser:${file(var.public_key_path)}"
   }
 }
+
 resource "google_compute_firewall" "firewall_mongo" {
   name    = "allow-mongo-default"
   network = "default"
@@ -28,6 +29,6 @@ resource "google_compute_firewall" "firewall_mongo" {
     ports    = ["27017"]
   }
 
-  target_tags  = ["reddit-db"]
-  source_tags  = ["reddit-app"]
+  target_tags = ["reddit-db"]
+  source_tags = ["reddit-app"]
 }
