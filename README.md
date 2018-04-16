@@ -71,3 +71,33 @@ testapp_port = 9292
 - Terraform ничего не знает про метаданные добавленные другими способамиe и после запуска terraform apply пользователь будет удален
 
 
+## 8. Homework-8: Terraform-2
+### 8.1 What was done
+- созданы два описания конфигурации образа для packer (app.json, db.json)
+- созданы 2 конфигурации TF для app и db;
+- конфигурация и деплой приложения и db, а также сетевые настройки предаставлены в виде модулей (app, db, vpc);
+- созданы два окружения **stage** (доступный с ограниченного числа IP-адресов), и **prod**, доступный всем;
+- создана когфигурация storage-bucket.tf для создания бакетов в GCS;
+
+
+
+### 8.2 How to run the project
+
+- cd packer
+  - выполнить `packer build -var-file=variables.json app.json`
+  - выполнить `packer build -var-file=variables.json db.json`
+- cd terraform/{prod,stage}
+  - для stage в **main.tf** необходио задать значние source_ranges = ["внешний-IP"]`
+  - выполняем `terraform init` для установки нужных модулей и провайдеров, можно просто `terraform get` в случае если провайдеры уже установлены.
+  - создать файл terraform.tfvars и задать в нем значения переменных tf  (пример заполнения в terraform.tfvars.example);
+  - выполнить `terraform plan`, убедится в отсутсвии ошибок;
+  - выполнить `terraform apply`
+- Done!
+
+
+### 8.4 How to check
+
+Выполнтиь `terraform output app_external_ip`
+
+С использованием веб-браузера перейти по адресу указанному в выводе команды.
+В окне веб браузера отобразится установленное приложение.
