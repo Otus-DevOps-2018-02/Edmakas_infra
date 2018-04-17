@@ -101,3 +101,38 @@ testapp_port = 9292
 
 С использованием веб-браузера перейти по адресу указанному в выводе команды.
 В окне веб браузера отобразится установленное приложение.
+
+## 9. Ansible-1
+### 9.1 What was done
+- создан каталог ansible
+- созданы файл конфигурации и инвентори файлы (ini, yml, json*) для ansible
+
+В рамках задания со *:
+- создан скрипт на bash позволяющий передать json-inventory в ansible
+
+### 9.2 How to run the project
+
+- cd terraform/stage
+  - выполнить `terraform apply`
+- cd ansible
+  - выполнить `ansible all -m ping`
+  - выполнить `ansible all -m ping -i inventory`
+  - выполнить `ansible all -m ping -i inventory.yml`
+  - выполнить `ansible all -m ping -i dynamic_inventory.sh
+
+### 9.3 How to check
+
+Резульататы выполнения ansible должны показать:
+
+```
+ansible all -m ping
+dbserver | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+appserver | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+
+```
