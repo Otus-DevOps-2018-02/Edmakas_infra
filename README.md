@@ -71,7 +71,7 @@ testapp_port = 9292
 - Terraform ничего не знает про метаданные добавленные другими способамиe и после запуска terraform apply пользователь будет удален
 
 
-## 8. Homework-8: Terraform-2
+## 8. Terraform-2
 ### 8.1 What was done
 - созданы два описания конфигурации образа для packer (app.json, db.json)
 - созданы 2 конфигурации TF для app и db;
@@ -137,7 +137,7 @@ appserver | SUCCESS => {
 
 ```
 
-# 10. Homework-10: Ansible-2
+# 10. Ansible-2
 ## 10.1 What was done
 - созданы playbooks:
   - reddit_app_one_play.yml
