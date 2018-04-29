@@ -136,3 +136,29 @@ appserver | SUCCESS => {
 }
 
 ```
+
+# 10. Homework-10: Ansible-2
+## 10.1 What was done
+- созданы playbooks:
+  - reddit_app_one_play.yml
+  - reddit_app_multiple_play.yml
+  - {app,db,deploy}.yml + site.yml
+  - packer_{app,db}.yml
+- в конфиги пакера поставлены provisioners ansible playbooks 
+
+## 10.2 How to run the project
+
+- cd $YOUR_GIT_REPO
+  - выполнить `packer build -var-file=packer/variables.json packer/app.json`
+  - выполнить `packer build -var-file=packer/variables.json packer/db.json`
+- cd $YOUR_GIT_REPO/terraform/stage
+  - выполнить `terraform apply`
+- cd $YOUR_GIT_REPO/ansible
+  - выполнить `ansible-playbook site.yml`
+- Done!
+
+## 10.3 How to check
+- cd $YOUR_GIT_REPO/terraform/stage
+  - terraform output app_external_ip`
+
+С использованием веб-браузера перейти по адресу указанному в выводе команды  (port 9292)
