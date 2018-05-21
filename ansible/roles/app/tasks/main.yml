@@ -14,5 +14,9 @@
       group: appuser
   notify: reload puma
 
+- name: Shoq info about the env this host belongs to
+  debug:
+    msg: "This host is in {{ env }} environmnet!!!"
+
 - name: enable puma
   systemd: name=puma enabled=yes
