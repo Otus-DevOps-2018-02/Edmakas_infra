@@ -162,3 +162,31 @@ appserver | SUCCESS => {
   - terraform output app_external_ip`
 
 С использованием веб-браузера перейти по адресу указанному в выводе команды  (port 9292)
+
+## 11.Ansible-3
+
+### 11.1 What was done
+- созданы ansible-роли app, db, playbook users
+- использовано роль jdauphant.nginx, сконфигурираван  nginx reverse proxy
+- созданы окружения {prod,stage}
+- организован каталог ansible
+  - плейбуки перенесены в ansible/playbooks
+  - прочие файлы перенесены в ansible/old
+- 
+### 11.2 How to run the project
+
+- cd $GIT_REPO_ROOT/terraform/stage
+  - выполнить `curl ifconfig.me`
+  - добавить IP-адрес из вывода предыдущей команды в main.tf (переменна source_ranges = ["xxx.xxx.xxx.xxx"])
+  - выполнить `terraform apply`
+- cd $GIT_REPO_ROOT/ansible/
+  - выполнить `ansible playbooks/site.yml`
+- Done!
+
+### 11.3 How to check
+
+Выполнтиь `terraform output app_external_ip`
+
+С использованием веб-браузера перейти по адресу указанному в выводе команды.
+Например: http://35.187.95.232
+В окне веб браузера отобразится установленное приложение.
