@@ -5,11 +5,9 @@
 
   vars_files:
     - "{{ inventory_dir }}/credentials.yml"
-  
   tasks:
     - debug:
         msg: "{{ credentials.users }}"
-        
     - name: create users
       user:
         name: "{{ item.key }}"
